@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class Contato extends Controller {
+class ContatoController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -34,7 +34,8 @@ class Contato extends Controller {
 	 */
 	public function store(StoreContatoPostRequest $request, Contato $contato)
 	{
-		//
+		$contato->create($request->all());
+		return redirect()->route('contatos.index');
 	}
 
 	/**
