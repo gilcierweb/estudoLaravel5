@@ -15,8 +15,19 @@ Route::get('/', 'WelcomeController@index');
 Route::match(['get', 'post'],'/teste', 'WelcomeController@teste');
 Route::get('home', 'HomeController@index');
 
+//padrão restfull rails
+Route::get('home2', 'Adm\ImovelController@index');
+
+Route::get('imoveis', 'Adm\ImovelController@index');
+Route::get('imoveis/create', 'Adm\ImovelController@create');
+Route::get('imoveis/{id}', 'Adm\ImovelController@show');
+Route::post('imoveis', 'Adm\ImovelController@store');
+
 Route::controllers([
 	'welcome' => 'WelcomeController',
+]);
+Route::controllers([
+	'imovel' => 'Adm\ImovelController',
 ]);
 
 Route::controllers([
