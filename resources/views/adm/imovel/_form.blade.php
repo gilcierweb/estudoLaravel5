@@ -1,4 +1,4 @@
-{!! Form::open(['url' => 'imoveis']) !!}
+{!! Form::open(['url' => 'adm/imoveis']) !!}
 
 <div class="form-group">
     {!! Form::label('imovel_titulo_pt-br', 'Titulo Português:') !!}

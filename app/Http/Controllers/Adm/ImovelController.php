@@ -62,7 +62,7 @@ class ImovelController extends Controller {
 	 */
 	public function edit($id)
 	{
-		return view('adm.imovel.edit');
+			return view('adm.imovel.edit');
 	}
 
 	/**
@@ -71,9 +71,13 @@ class ImovelController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Request $request,$id )
 	{
-		//
+		$id = Request::input('id');
+		$imovel = Imovel::findOrFail($id);
+		$input = Request::all();
+		Imovel::save($input);
+		return view('adm.imovel.edit');
 	}
 
 	/**

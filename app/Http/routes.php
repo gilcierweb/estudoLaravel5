@@ -15,14 +15,21 @@ Route::get('/', 'WelcomeController@index');
 Route::match(['get', 'post'],'/teste', 'WelcomeController@teste');
 Route::get('home', 'HomeController@index');
 
+Route::group(array('prefix' => 'adm'), function()
+{
 //padrão restfull rails
-Route::get('home2', 'Adm\ImovelController@index');
+//Route::get('home2', 'Adm\ImovelController@index');
+//
+//	Route::get('imoveis', 'Adm\ImovelController@index');
+//	Route::get('imoveis/create', 'Adm\ImovelController@create');
+//	Route::get('imoveis/{id}', 'Adm\ImovelController@show');
+//	Route::get('imoveis/{id}', 'Adm\ImovelController@edit');
+//	Route::post('imoveis', 'Adm\ImovelController@store');
+//	Route::post('imoveis/{id}', 'Adm\ImovelController@update');
 
-Route::get('imoveis', 'Adm\ImovelController@index');
-Route::get('imoveis/create', 'Adm\ImovelController@create');
-Route::get('imoveis/{id}', 'Adm\ImovelController@show');
-Route::post('imoveis', 'Adm\ImovelController@store');
-
+// recurso do rails
+Route::resource('imoveis', 'Adm\ImovelController');
+});
 Route::controllers([
 	'welcome' => 'WelcomeController',
 ]);
