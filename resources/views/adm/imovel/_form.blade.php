@@ -1,6 +1,6 @@
 
 @if(isset($imovel))
-    {!! Form::model($imovel, ['route' => ['updateroute', $imovel->id], 'method' => 'patch']) !!}
+    {!! Form::model($imovel, ['route' => ['imoveis.update', $imovel->id], 'method' => 'patch']) !!}
 @else
     {!! Form::open(['url' => 'adm/imoveis']) !!}
 @endif
